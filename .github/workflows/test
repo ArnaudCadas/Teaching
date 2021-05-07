@@ -1,0 +1,21 @@
+name: Linux_Container_teaching_Workflow
+
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+          architecture: x64
+      - name: Install dependencies for test
+        run: |
+          pip install -e .
+      - name: Test with pytest
+        run: |
+          pip install pytest
+          pip install flake8
+          pytest __test__
+          flake8
