@@ -1,4 +1,3 @@
-import numpy as np
 
 
 def sum_arrays(a, b):
