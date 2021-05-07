@@ -5,6 +5,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Set up Python 3.7
         uses: actions/setup-python@v2
         with:
@@ -12,10 +13,10 @@ jobs:
           architecture: x64
       - name: Install dependencies for test
         run: |
-          pip install -e .
+          pip install -r requirements.txt
       - name: Test with pytest
         run: |
           pip install pytest
           pip install flake8
-          pytest __test__
+          python -m pytest __test__
           flake8
