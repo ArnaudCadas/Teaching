@@ -1,5 +1,10 @@
+import numpy as np
 
 
-def sum_arrays(a, b):
-    print(f'Sum of {a} and {b}')
-    return a + b
+def sum_arrays(a, b, c):
+    print(f'Sum of {a}, {b} and {c}')
+    return a + b + c
+
+
+def multiply_arrays(a, b):
+    return np.multiply(a, b)
